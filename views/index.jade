@@ -1,0 +1,71 @@
+extends layout
+
+block content
+	main.ui
+		h1.ui.header 
+			i.student.icon 
+			| #{header_title}
+		div.segment
+			form.ui.form
+				h3.ui.dividing.header #{info_title_1}
+				div.two.fields
+					div.field.required
+						label 姓名
+						input(name="username",
+							id="username",
+							type="text"
+							)
+					div.field
+						label 学号
+						input(name="username",
+							id="username",
+							type="text"
+							)
+				div.fields.required
+					div.twelve.wide.field
+						label 籍贯
+						input(type="text",name="nativePlace",id="nativePlace")
+					div.four.wide.field
+						label 性别
+						div.ui.selection.dropdown
+							div.default.text 请选择性别
+							i.dropdown.icon
+							input(type="hidden",name="sex",id="sex")
+							div.menu
+								div(data-value="1").item 男
+								div(data-value="0").item 女
+				div.three.fields
+					div.field.required
+						label 出生日期
+						input(id="birthday",class="birthday",type="date" value="1985-01-01")
+					div.field.required
+						label 民族
+						input(class="nation",type="text",id="nation")
+					div.field
+						label 学科
+						div.ui.selection.dropdown
+							div.default.text 请选择学科
+							i.dropdown.icon
+							input(type="hidden",name="subject",id="subject")
+							div.menu
+								div(data-value="0").item 文科
+								div(data-value="1").item 理科
+								div(data-value="1").item 工科
+				div.three.fields
+					div.field
+						label 毕业学校
+						input(id="school",name="school",type="text")
+					div.field
+						label 专业
+						input(id="speciality",name="speciality",type="text")
+					div.field.required
+						label 就读方式
+						div.ui.selection.dropdown
+							div.default.text 请选择就读方式
+							i.dropdown.icon
+							input(type="hidden",name="studentType",id="studentType")
+							div.menu
+								div(data-value="0").item 住宿
+								div(data-value="1").item 走读
+			div.ui.top.left.attached.huge.label #{page_title}
+
