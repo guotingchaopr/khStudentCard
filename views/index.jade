@@ -67,5 +67,30 @@ block content
 							div.menu
 								div(data-value="0").item 住宿
 								div(data-value="1").item 走读
+				div.two.fields
+					div.field.required
+						label 身份证号码
+						input(id="idCard",name="idCard",type="text",required)
+					div.field.required
+						label 联系方式
+						input(id="phoneNum",name="phoneNum",type="number",required)
+				div.two.fields
+					div.field
+						label 政治面貌
+						input(id="politics",type="text",name="politics")
+					div.field.required
+						label 家庭住址
+						input(id="address",type="text",name="address")
+				div.fields
+						div.fluid.ui.animated.fade.button
+							div.visible.content 提交
+							div.hidden.content 确认?
+					
 			div.ui.top.left.attached.huge.label #{page_title}
+
+
+
+
+
+
 
