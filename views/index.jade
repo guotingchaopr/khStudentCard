@@ -5,7 +5,9 @@ block content
 		h1.ui.header 
 			i.student.icon 
 			| #{header_title}
-		div.segment
+			div.ui.right.floated.icon.button#photo
+				i.photo.icon
+		div.ui.segment
 			form.ui.form
 				h3.ui.dividing.header #{info_title_1}
 				div.two.fields
@@ -85,9 +87,16 @@ block content
 						div.fluid.ui.animated.fade.button
 							div.visible.content 提交
 							div.hidden.content 确认?
-					
-			div.ui.top.left.attached.huge.label #{page_title}
-
+		div.ui.modal#phto_Modal
+			i.close.icon 
+			i.header 学生学籍照
+			div.content
+				video#mediaStream.ui.medium.image(autoplay)
+			div.actions
+				div.ui.black.button 拍照
+				div.ui.positive.right.labeled.icon.button 提交
+					i.checkmark.icon
+		div.ui.top.left.attached.huge.label #{page_title}
 
 
 
