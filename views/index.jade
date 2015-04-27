@@ -87,15 +87,15 @@ block content
 						div.fluid.ui.animated.fade.button
 							div.visible.content 提交
 							div.hidden.content 确认?
-		div.ui.modal#phto_Modal
-			i.close.icon 
-			i.header 学生学籍照
+		div.ui.small.modal#phto_Modal
+			i.close.icon
+			div.header 学生学籍照
 			div.content
-				video#mediaStream.ui.medium.image(autoplay)
+				div
+					video#mediaStream(autoplay).small.image
 			div.actions
-				div.ui.black.button 拍照
-				div.ui.positive.right.labeled.icon.button 提交
-					i.checkmark.icon
+				div.ui.button.cancel 拍照
+				div.ui.button.ok  提交
 		div.ui.top.left.attached.huge.label #{page_title}
 
 
