@@ -2,13 +2,14 @@ extends layout
 
 block content
 	main.ui
-		h1.ui.header 
+		h1.header
 			i.student.icon 
 			| #{header_title}
-			div.ui.right.floated.icon.button#photo
-				i.photo.icon
-		div.ui.segment
-			form.ui.form
+		div.massive.left.floated.ui.bordered.icon.button#photo
+			i.icon.photo
+		image#user_photo.small.ui.right.floated.image
+		div.ui.segment(style='clear:both;')
+			form.ui.form(name="userForm")
 				h3.ui.dividing.header #{info_title_1}
 				div.two.fields
 					div.field.required
@@ -84,7 +85,7 @@ block content
 						label 家庭住址
 						input(id="address",type="text",name="address")
 				div.fields
-						div.fluid.ui.animated.fade.button
+						div.fluid.ui.animated.fade.button#submit
 							div.visible.content 提交
 							div.hidden.content 确认?
 		div.ui.small.modal#phto_Modal
