@@ -53,7 +53,7 @@ block content
 							div.menu
 								div(data-value="0").item 文科
 								div(data-value="1").item 理科
-								div(data-value="1").item 工科
+								div(data-value="2").item 工科
 				div.three.fields
 					div.field
 						label 毕业学校
@@ -86,8 +86,8 @@ block content
 						input(id="address",type="text",name="address")
 				div.fields
 						div.fluid.ui.animated.fade.button#submit
-							div.visible.content 提交
-							div.hidden.content 确认?
+							button.visible.content(type="submit") 提交
+							button.hidden.content 确认?
 		div.ui.small.modal#phto_Modal
 			i.close.icon
 			div.header 学生学籍照

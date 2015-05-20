@@ -1,23 +1,16 @@
-var express = require('express'),
-	nodemailer = require('nodemailer');
+var express = require('express');
+var email = require("emailjs");
 var router = express.Router();
-var transporter = nodemailer.createTransport("SMTP",{
-	host: "smtp.qq.com", // 主机
-    secureConnection: false, // 使用 SSL
-    port: 465, // SMTP 端口
-	auth:{
-		user:'313526487@qq.com',
-		pass:"!!??sohard"
-	}
+var server = email.server.connect({
+   user:"313526487@qq.com",
+   password:"gtc121561",
+   port:"465",
+   host:"smtp.qq.com",
+   ssl:true
 });
 
-var sendMailOptions = {
-	from:"313526487@qq.com",
-	to:"guotingchaopr@gmail.com",
-	subjuect:"hello",
-	text:"hello world",
-	html:"<b>Hello World</b>"	
-};
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   	res.render('index', { 
@@ -30,13 +23,15 @@ router.get('/', function(req, res, next) {
 
 router.post("/save",function(req,res){
 	res.json(req.body);
-	transporter.sendMail(sendMailOptions,function(err,resp){
-		console.log(err||resp);
-	});
-	transporter.close();
-//	transporter.sendMail(sendMailOptions,function(err,resp){
-//		console.log(err||resp);
-//	});
+	server.send({
+    text:"",
+    attachment:[
+      {data:req.body.html, alternative:true}
+    ],
+	  from:"guotingchao <313526487@qq.com>",
+	  to:"guotingchaopr@gmail.com",//1275488689@qq.com
+	  subject:"知行学院学籍信息_"+req.body.username
+	},function(err,message){console.log(err||message);});
 });
 
 
